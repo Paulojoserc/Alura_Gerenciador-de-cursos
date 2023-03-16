@@ -25,11 +25,27 @@ public class Curso {
 	}
 
 	public List<Aula> getAulas() {
-		//apenas leitura não pode add ou remover apenas consultar 
+		// apenas leitura não pode add ou remover apenas consultar
 		return Collections.unmodifiableList(aulas);
 	}
-	
+
 	public void adciciona(Aula aula) {
 		this.aulas.add(aula);
 	}
+
+	public int getTempoTotal() {
+		int tempoTotal = 0;
+		for (Aula aula : aulas) {
+			tempoTotal += aula.getTempo();
+		}
+		return tempoTotal;
+		// return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+	}
+
+	@Override
+	public String toString() {
+
+		return "[Curso: " + nome + ", tempo total: " + this.getTempoTotal() + ", aulas: " + this.aulas + "]";
+	}
+
 }
