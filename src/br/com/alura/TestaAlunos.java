@@ -1,7 +1,9 @@
 package br.com.alura;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 
 public class TestaAlunos {
 public static void main(String[] args) {
@@ -36,5 +38,11 @@ public static void main(String[] args) {
 	System.out.println(alunos);
 	
 	alunos.remove("Sergio Lopes");
+	
+	
+	System.out.println();
+	System.out.println("Usamos a lista para poder orderna a coletion pois set não ordena");
+	List<String> alunosEmLista = new ArrayList<>(alunos);
+	
 }
 }
